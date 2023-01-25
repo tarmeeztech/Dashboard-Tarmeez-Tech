@@ -33,18 +33,18 @@
 .table tr:nth-child(){
     background-color: var(--color-white);
 }
-.material-symbols-outlined {
+/* .material-symbols-outlined {
     cursor: pointer;
 }
 .dropdown.active {
     position: relative;
-}
+} */
 .dropdown-menu {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 5px;
-    right: 45px;
+    /* top: 5px; */
+    right: 55px;
     background-color: var(--color-white);
     padding: var(--card-padding);
     border-radius: 10px 0 10px 10px;
@@ -52,7 +52,11 @@
     box-shadow: var(--box-shadow);
     opacity: 0;
     transform: translateY(-10px);
+    z-index: 999;
     /* transition: opacity 150ms ease-in-out, transform 150ms ease-in-out; */
+}
+.dropdown span {
+    cursor: pointer;
 }
 .dropdown.active .material-symbols-outlined + .dropdown-menu {
     opacity: 1;
