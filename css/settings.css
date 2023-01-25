@@ -1,0 +1,61 @@
+/*------- Variables -------*/
+:root {
+	--main-color: #F76F01;
+	--secondary-color: #111629;
+    --section-padding: 60px;
+    --section-background: #eaf0f9;
+    --color-white: #fff;
+    --icon-main-color: #111629;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+
+    --card-padding: 15px;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+.grid-container {
+    height: auto;
+    position: relative;
+}
+.main-container {
+    display: block;
+    padding: 0;
+    margin: 15px 20px 15px 15px;
+}
+.box {
+    display: flex;
+    width: 100%;
+    background-color: var(--color-white);
+    padding: var(--padding-1);
+    border-radius: var(--border-radius-1);
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+}
+.box p {
+    font-size: 16px;
+}
+.box p span {
+    text-decoration: underline;
+}
+.box img {
+    width: 130px;
+    height: 130px;
+    border-radius: var(--border-radius-1);
+}
+.box .set-info {
+    display: flex;
+    flex-direction: row;
+}
+.box .set-info .value {
+    padding-left: 25px;
+}
+@media screen and (max-width: 767.5px) {
+    .box {
+        flex-direction: column;
+    }
+}

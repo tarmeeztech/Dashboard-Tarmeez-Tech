@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables | Tarmeez Tech</title>
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+    <!-- Material icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- Fonts Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/table.css">
+</head>
+
+<body>
+    <div class="grid-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="menu-icon" onclick="openSidebar()">
+                <span class="material-symbols-outlined">menu</span>
+            </div>
+            <div class="header-left">
+                <img src="images/user.jpg" alt="profile-image">
+                <div>
+                    <h3>Hello, Mohammed Ali</h3>
+                    <div class="date">
+                        <span id="lblTime"></span>
+                        <span id="date" class="date"></span>
+                        <script>
+                            window.onload = function () {
+                                DisplayCurrentTime();
+                            };
+                            function DisplayCurrentTime() {
+                                var date = new Date();
+                                var hours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
+                                var am_pm = date.getHours() >= 12 ? "PM" : "AM";
+                                hours = hours < 10 ? "0" + hours : hours;
+                                var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+                                var seconds = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
+                                time = hours + ":" + minutes + ":" + " " + am_pm;
+                                var lblTime = document.getElementById("lblTime");
+                                lblTime.innerHTML = time;
+                            };
+
+                            let date = new Date().toUTCString().slice(5, 16);
+                            document.getElementById("date").innerHTML = date;
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="lnag-menu">
+                    <div id="current-lang">
+                        <span class="material-symbols-outlined">language</span>
+                        <div class="selected-lang">
+                            English
+                        </div>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </div>
+                    <ul>
+                        <li class="en">
+                            <a href="#">English</a>
+                        </li>
+                        <li class="ar">
+                            <a href="#">Arabic</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="messages-menu">
+                    <span class="material-symbols-outlined icon">mail</span>
+                    <div class="messages">
+                        <div class="head">
+                            <h3>Message</h3>
+                            <a href="#">
+                                <p>See All</p>
+                            </a>
+                        </div>
+                        <div class="message">
+                            <div class="name-sender">
+                                <h4>Rahma</h4>
+                                <p>Today, 9:52pm</p>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quas distinctio.
+                                Consectetur iste minus impedit accusantium? Ratione, minima, veritatis aut possimus
+                                praesentium architecto facilis cumque ducimus, quas soluta quaerat accusantium?</p>
+                        </div>
+                        <div class="message">
+                            <div class="name-sender">
+                                <h4>Rahma</h4>
+                                <p>Today, 9:52pm</p>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet consecteturadipisicingelit.Consequatur, quas distinctio.
+                                Consectetur iste minus impedit accusantium? Ratione, minima, veritatis aut possimus
+                                praesentium architecto facilis cumque ducimus, quas soluta quaerat accusantium?</p>
+                        </div>
+                        <div class="message">
+                            <div class="name-sender">
+                                <h4>Rahma</h4>
+                                <p>Today, 9:52pm</p>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quas distinctio.
+                                Consectetur iste minus impedit accusantium? Ratione, minima, veritatis aut possimus
+                                praesentium architecto facilis cumque ducimus, quas soluta quaerat accusantium?</p>
+                        </div>
+                        <div class="message">
+                            <div class="name-sender">
+                                <h4>Rahma</h4>
+                                <p>Today, 9:52pm</p>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, quas distinctio.
+                                Consectetur iste minus impedit accusantium? Ratione, minima, veritatis aut possimus
+                                praesentium architecto facilis cumque ducimus, quas soluta quaerat accusantium?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar">
+            <div class="head">
+                <div class="logo">
+                    <img src="images/logo.png" id="logo" alt="Tarmeez Logo">
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-symbols-outlined" onclick="closeSidebar()"
+                        style="cursor: pointer;">close</span>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="index.html" class="active">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="table.html">
+                    <span class="material-symbols-outlined">table</span>
+                    <h3>Tables</h3>
+                </a>
+                <a href="register.html">
+                    <!-- <img src="images/auth.png" class="sidebar-icon"> -->
+                    <span class="material-symbols-outlined">app_registration</span>
+                    <h3>Register</h3>
+                </a>
+                <a href="settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    <h3>Settings</h3>
+                </a>
+                <a class="dark-mode">
+                    <span class="material-symbols-outlined">dark_mode</span>
+                    <h3>Dark Mode</h3>
+                    <div id="toggle">
+                        <i class="indicator"></i>
+                    </div>
+                </a>
+                <a class="logout">
+                    <span class="material-symbols-outlined">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- End Sidebar -->
+
+        <!-- Main -->
+        <main class="main-container">
+            <div class="table-container">
+                <h2 class="heading">Title Table</h2>
+                <div class="table-c">
+                    <table class="table">
+                        <thead class="thead">
+                            <tr>
+                                <th>Name</th>
+                                <th>Title</th>
+                                <th>Title</th>
+                                <th>Title</th>
+                                <th>Title</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Abood</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>
+                                    <div class="dropdown" data-dropdown>
+                                        <span class="material-symbols-outlined" data-dropdown-button>more_vert</span>
+                                        <div class="dropdown-menu">
+                                            <a href="#">
+                                                <div class="edit"><span class="material-symbols-outlined">edit</span>
+                                                    Edit
+                                                </div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="show"><span
+                                                        class="material-symbols-outlined">visibility</span>
+                                                    Show</div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="remove"><span
+                                                        class="material-symbols-outlined">delete</span>
+                                                    Remove</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Abood</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>
+                                    <div class="dropdown" data-dropdown>
+                                        <span class="material-symbols-outlined" data-dropdown-button>more_vert</span>
+                                        <div class="dropdown-menu">
+                                            <a href="#">
+                                                <div class="edit"><span class="material-symbols-outlined">edit</span>
+                                                    Edit
+                                                </div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="show"><span
+                                                        class="material-symbols-outlined">visibility</span>
+                                                    Show</div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="remove"><span
+                                                        class="material-symbols-outlined">delete</span>
+                                                    Remove</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Abood</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>
+                                    <div class="dropdown" data-dropdown>
+                                        <span class="material-symbols-outlined" data-dropdown-button>more_vert</span>
+                                        <div class="dropdown-menu">
+                                            <a href="#">
+                                                <div class="edit"><span class="material-symbols-outlined">edit</span>
+                                                    Edit
+                                                </div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="show"><span
+                                                        class="material-symbols-outlined">visibility</span>
+                                                    Show</div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="remove"><span
+                                                        class="material-symbols-outlined">delete</span>
+                                                    Remove</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Abood</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>
+                                    <div class="dropdown" data-dropdown>
+                                        <span class="material-symbols-outlined" data-dropdown-button>more_vert</span>
+                                        <div class="dropdown-menu">
+                                            <a href="#">
+                                                <div class="edit"><span class="material-symbols-outlined">edit</span>
+                                                    Edit
+                                                </div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="show"><span
+                                                        class="material-symbols-outlined">visibility</span>
+                                                    Show</div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="remove"><span
+                                                        class="material-symbols-outlined">delete</span>
+                                                    Remove</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Abood</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>
+                                    <div class="dropdown" data-dropdown>
+                                        <span class="material-symbols-outlined" data-dropdown-button>more_vert</span>
+                                        <div class="dropdown-menu">
+                                            <a href="#">
+                                                <div class="edit"><span class="material-symbols-outlined">edit</span>
+                                                    Edit
+                                                </div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="show"><span
+                                                        class="material-symbols-outlined">visibility</span>
+                                                    Show</div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="remove"><span
+                                                        class="material-symbols-outlined">delete</span>
+                                                    Remove</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Abood</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>
+                                    <div class="dropdown" data-dropdown>
+                                        <span class="material-symbols-outlined" data-dropdown-button>more_vert</span>
+                                        <div class="dropdown-menu">
+                                            <a href="#">
+                                                <div class="edit"><span class="material-symbols-outlined">edit</span>
+                                                    Edit
+                                                </div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="show"><span
+                                                        class="material-symbols-outlined">visibility</span>
+                                                    Show</div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="remove"><span
+                                                        class="material-symbols-outlined">delete</span>
+                                                    Remove</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Abood</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>
+                                    <div class="dropdown" data-dropdown>
+                                        <span class="material-symbols-outlined" data-dropdown-button>more_vert</span>
+                                        <div class="dropdown-menu">
+                                            <a href="#">
+                                                <div class="edit"><span class="material-symbols-outlined">edit</span>
+                                                    Edit
+                                                </div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="show"><span
+                                                        class="material-symbols-outlined">visibility</span>
+                                                    Show</div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="remove"><span
+                                                        class="material-symbols-outlined">delete</span>
+                                                    Remove</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Abood</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>
+                                    <div class="dropdown" data-dropdown>
+                                        <span class="material-symbols-outlined" data-dropdown-button>more_vert</span>
+                                        <div class="dropdown-menu">
+                                            <a href="#">
+                                                <div class="edit"><span class="material-symbols-outlined">edit</span>
+                                                    Edit
+                                                </div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="show"><span
+                                                        class="material-symbols-outlined">visibility</span>
+                                                    Show</div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="remove"><span
+                                                        class="material-symbols-outlined">delete</span>
+                                                    Remove</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Abood</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>Software Developer</td>
+                                <td>
+                                    <div class="dropdown" data-dropdown>
+                                        <span class="material-symbols-outlined" data-dropdown-button>more_vert</span>
+                                        <div class="dropdown-menu">
+                                            <a href="#">
+                                                <div class="edit"><span class="material-symbols-outlined">edit</span>
+                                                    Edit
+                                                </div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="show"><span
+                                                        class="material-symbols-outlined">visibility</span>
+                                                    Show</div>
+                                            </a>
+                                            <a href="#">
+                                                <div class="remove"><span
+                                                        class="material-symbols-outlined">delete</span>
+                                                    Remove</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+        <!-- End Main -->
+
+        <!-- Custom JS -->
+        <script src="js/main.js"></script>
+        <script src="js/darkMode.js"></script>
+        <script src="js/activePage.js"></script>
+        <script src="js/tableDropdown.js"></script>
+        <script src="js/menuMsg.js"></script>
+        <script src="js/changeLang.js"></script>
+    </div>
+</body>
+
+</html>

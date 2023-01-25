@@ -1,0 +1,60 @@
+.grid-container {
+    height: auto;
+    position: relative;
+}
+.main-container {
+    display: block;
+    padding: 0;
+    margin: 15px 20px 15px 15px;
+}
+.box {
+    padding: var(--padding-1);
+    border-radius: var(--border-radius-1);
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+}
+h2 {
+    font-size: 18px;
+    border-bottom: 2px solid var(--section-background);
+    margin-bottom: 15px;
+}
+.card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+label {
+    display: block;
+}
+input {
+    width: 100%;
+    border: none;
+    font-size: 14px;
+    padding: var(--card-padding);
+    background-color: var(--section-background);
+    outline-color: var(--main-color);
+    border-radius: var(--border-radius-1);
+    color: var(--secondary-color);
+}
+input:focus {
+    outline-color: var(--main-color);
+}
+button {
+    width: 250px;
+    height: 50px;
+    border: none;
+    background-color: var(--icon-main-color);
+    color: var(--color-white);
+    border-radius: var(--border-radius-1);
+    font-size: 16px;
+    margin-top: 20px;
+    float: right;
+}
+@media screen and (max-width: 768px) {
+    .card {
+        grid-template-columns: auto;
+    }
+    button {
+        width: 100%;
+    }
+}

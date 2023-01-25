@@ -1,0 +1,47 @@
+:root {
+	--main-color: #F76F01;
+	--secondary-color: #111629;
+    --section-padding: 60px;
+    --section-background: #eaf0f9;
+    --color-white: #fff;
+    --icon-main-color: #111629;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+
+    --card-padding: 15px;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+.main-container {
+    display: block;
+}
+.main-container .box {
+    background-color: var(--color-white);
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: var(--border-radius-1);
+}
+.main-container .box .message {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.main-container .box .message:nth-child(even) {
+    background-color: var(--section-background);
+    border-radius: var(--border-radius-1);
+    padding: 5px;
+}
+.main-container .box .message span {
+    font-size: 50px;
+    background-color: var(--section-background);
+    padding: 10px;
+    border-radius: 50%;
+}
+.main-container .box .message:nth-child(even) span {
+    background-color: var(--color-white);
+}
